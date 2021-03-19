@@ -7,3 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+env:
+  DOCKER_IMAGE_NAME: tomha-magenic-azure-tt
+  IMAGE_REGISTRY_URL: docker.pkg.github.com
+
+jobs:
+  build: ubuntu-latest
+
+  if: contains(github.event.pull_request.labels.*.name, 'stage')
