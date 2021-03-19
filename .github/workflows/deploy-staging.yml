@@ -13,6 +13,7 @@ env:
   IMAGE_REGISTRY_URL: docker.pkg.github.com
 
 jobs:
-  build: ubuntu-latest
+  build: 
+    runs-on: ubuntu-latest
 
-  if: contains(github.event.pull_request.labels.*.name, 'stage')
+    if: contains(github.event.pull_request.labels.*.name, 'stage')
